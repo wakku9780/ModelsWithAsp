@@ -1,0 +1,80 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+
+    // var emp = ViewData["myEmployee"] as Employee;
+
+    var emps = ViewData["myEmployee"] as  List<Employee>;
+}
+
+
+@{
+    ViewData["Title"] = "Home Page";
+    var students = ViewData["mystudents"] as List<StudentModel>;
+}
+
+<div class="text-center">
+    <h1 class="display-4">Welcome</h1>
+    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+</div>
+
+
+
+
+@{
+    if(emps !=null)
+    {
+        foreach(var emp in emps)
+        {
+            <h2>@emp.empId</h2>
+            <h2>@emp.empName</h2>
+            <h2>@emp.designation</h2>
+            <h2>@emp.salary</h2>
+
+            <p>---------------------</p>
+        }
+
+    }
+}
+
+
+
+@* @{
+
+if(emp !=null){
+<h2>@emp.empId</h2>
+<h2>@emp.empName</h2>
+<h2>@emp.designation</h2>
+    <h2>@emp.salary</h2>
+}
+else
+{
+    <h2>Data not found </h2>
+}
+
+} *@
+
+
+
+
+
+
+
+@* <table>
+    <tr>
+        <th>ROLL NO</th>
+        <th>NAME</th>
+        <th>GENDER</th>
+        <th>CLASS </th>
+
+    </tr>
+
+    @foreach(var std in students)
+    {
+        <td>@std.rollNo</td>
+        <td>@std.name</td>
+        <td>@std.gender</td>
+        <td>@std.standard</td>
+        <br/>
+    }
+</table>
+ *@
